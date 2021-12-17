@@ -1,0 +1,7 @@
+/var/log/cron.log {
+    rotate 60
+    daily
+    notifempty
+    compress
+    delaycompress
+}

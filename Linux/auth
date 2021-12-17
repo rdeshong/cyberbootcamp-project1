@@ -1,0 +1,7 @@
+/var/log/auth.log {
+    rotate 180
+    daily
+    notifempty
+    compress
+    delaycompress
+}
