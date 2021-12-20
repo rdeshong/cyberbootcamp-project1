@@ -6,10 +6,10 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _Ansible/install-elk.yml_
+  - Ansible/install-elk.yml
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -25,8 +25,8 @@ Load balancing ensures that the application will be highly available, in additio
 Load balancers protect availablility within the CIA triad of security? The advantage of a jump box in the setup, is that it restricts access by not exposing key components of the network. To access any network resource, access has to go through the jump box.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the filesystem and system performance.
-- Filebeat watches for changes to the filesystem._
-- Metricbeat records a machine's metrics such as uptime, CPU and memory usage_
+- Filebeat watches for changes to the filesystem. In this implementation it's used to also monitor sudo commands, ssh logins and modifications to users and groups.
+- Metricbeat records a machine's metrics such as uptime, CPU and memory usage
 
 The configuration details of each machine may be found below.
 
@@ -42,7 +42,7 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the jump box machine can accept connections from the Internet through SSH. Also, web access to the Kibana dashboard is allowed on the internet. Access to these machines are only allowed from the following IP addresses:
-- 69.79.0.0/24
+- my personal public IP from my ISP was whitelisted and allowed access to the jumpbox and access to my Kibana dashboard.
 
 Machines within the network can only be accessed by the jump box through SSH.
 - The jump box is allowed to access the ELK VM with IP 10.10.1.4.
