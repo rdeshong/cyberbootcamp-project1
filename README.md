@@ -68,7 +68,7 @@ The playbook implements the following tasks:
 - starts the container
 - enable the container to start on boot
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+The following screenshot displays the result of running `docker ps` after successfully installing the ELK instance.
 
 ![](Images/docker_ps_output.png)
 
