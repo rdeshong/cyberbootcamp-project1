@@ -114,17 +114,17 @@ SSH into the control node and follow the steps below:
 
 ### Kibana investigation
 - Answer the following questions:
-   a) There were 236 unique visitors from India in the last 7 days.
+   1) There were 236 unique visitors from India in the last 7 days.
    ![](Images/web_visitors_from_india.png)
-   b) In the last 24 hours, there were 7 visitors from China using OSX as the operating system
+   2) In the last 24 hours, there were 7 visitors from China using OSX as the operating system
    ![](Images/web_visitors_from_india.png)
-   c) In the last 2 days, the percentage of visitors that received 404 errors were 47.368% and 52.632% had 503 errors?
+   3) In the last 2 days, the percentage of visitors that received 404 errors were 47.368% and 52.632% had 503 errors?
    ![](Images/status_codes_last_2_days.png)
-   d) In the last 7 days, the United States produced the majority of the traffic on the website?
+   4) In the last 7 days, the United States produced the majority of the traffic on the website?
    ![](Images/web_requests_by_country.png)
-   e) Traffic from the US for the last 7 days shows the highest activity at 3 and 6AM.
+   5) Traffic from the US for the last 7 days shows the highest activity at 3 and 6AM.
    ![](Images/us_visitors_active_time.png)
-   f) The list of files downloaded in the last 7 days are:
+   6) The list of files downloaded in the last 7 days are:
    .gz  - An archive file compressed by the standard GNU zip (gzip) compression algorithm.
    .css - Cascading style sheet
    .deb - A Debian Software Package file that's used to store installation packages on Linux operating systems.
