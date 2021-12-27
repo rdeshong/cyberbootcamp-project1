@@ -116,11 +116,11 @@ SSH into the control node and follow the steps below:
 - Answer the following questions:
    1) There were 236 unique visitors from India in the last 7 days.
    ![](Images/web_visitors_from_india.png)
-   2) In the last 24 hours, there were 7 visitors from China using OSX as the operating system
+   2) In the last 24 hours, there were 7 visitors from China using OSX as the operating system.
    ![](Images/web_visitors_from_india.png)
-   3) In the last 2 days, the percentage of visitors that received 404 errors were 47.368% and 52.632% had 503 errors?
+   3) In the last 2 days, the percentage of visitors that received 404 errors were 47.368% and 52.632% had 503 errors.
    ![](Images/status_codes_last_2_days.png)
-   4) In the last 7 days, the United States produced the majority of the traffic on the website?
+   4) In the last 7 days, the United States produced the majority of the traffic on the website.
    ![](Images/web_requests_by_country.png)
    5) Traffic from the US for the last 7 days shows the highest activity at 3 and 6AM.
    ![](Images/us_visitors_active_time.png)
@@ -130,4 +130,20 @@ SSH into the control node and follow the steps below:
    .deb - A Debian Software Package file that's used to store installation packages on Linux operating systems.
    .zip - A ZIP compressed file.
    .rpm - A Red Hat Package Manager file that's used to store installation packages on Linux operating systems.
-- Now that you have a feel for the data, Let's dive a bit deeper. Look at the chart that shows Unique Visitors Vs. Average Bytes.
+- In the last 7 days, the most activity with respect to the most bytes seems to be December 19th at 16:45:10 where a 9,934k CSS file was retrieved by a user from Vietnam. The HTTP response code was a 200. It doesn't seem that malicious, but compared to the other days where other files types were retrieved, but small it might be worth taking a closer look.
+Other additiona details are:
+* The source IP address of this activity is 163.139.91.194.
+* The geo coordinates of this activity is latitude 25.90683333 and longitude -97.42586111.
+* The OS of the source machine was Windows XP.
+* The full URL accessed was https://cdn.elastic-elastic-elastic.org/styles/ads.css.
+* The visitor's traffic originated from http://www.elastic-elastic-elastic.com/success/martin-j-fettman.
+![](Images/file_download.png)
+![](Images/bytes_access_act.png)
+- It's appearing as if the user might have been just browsing. The file downloaded doesn't appear to be malicious, as it appears to be a CSS file used to style web pages. However, in one of the activity before at "Dec 19, 2021 @ 16:37:41.590", the referer was from http://twitter.com/success/donald-mcmonagle. So there's a chance it can be malicious. It does appear to be violating the same-origin policy where cross-site scripting shouldn't be allowed.
+- Kibana additional log testing and verification:
+   1) Generated failed logins to a web host and confirm they show in Kibana through Filebeat:
+   ![](Images/ssh_failed_logins.png)
+   2) Generated CPU load on Web-2 using stress and confirmed metrics shows in Kibana:
+   ![](Images/stress_cpu_load.png)
+   3) Generated lots of web requests to Web-2 and confirmed data is collected with Metricbeat and shows in Kibana:
+   ![](Images/web_network_requets.png)
